@@ -69,5 +69,9 @@ export const usePokeStore = defineStore('pokemons', {
       this.searchedPokemons = this.favoritePokemons
       this.isFilteredFavorites = true
     }
+  },
+  persist: {
+    paths: ['pokemons', 'favoritePokemons', 'searchedPokemons'],
+    storage: sessionStorage
   }
 })

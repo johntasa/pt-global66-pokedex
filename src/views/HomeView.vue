@@ -10,7 +10,6 @@ const router = useRouter();
 const loading = computed(() => pokeStore.loading);
 
 const getPokemonsInfo = async () => {
-  await pokeStore.getPokemons();
   router.push({ name: "Pokemons" });
 }
 </script>

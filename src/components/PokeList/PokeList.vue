@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from "vue";
+import { ref, watch, onMounted } from "vue";
 import { usePokeStore } from "@/store/pokeStore.js";
 import { storeToRefs } from "pinia";
 import PokeItem from "./PokeItem.vue";
@@ -17,6 +17,10 @@ const openPokemonDetails = async (pokemonName) => {
 watch(searchInput, (value) => {
   pokeStore.searchPokemons(value);
 });
+
+onMounted(async () => {
+  await pokeStore.getPokemons();
+})
 </script>
 
 <template>

@@ -20,7 +20,7 @@ const types = computed(() => {
 });
 
 const copyToClipboardInfo = async () => {
-  textToCopy.value = `Name: ${capitalizeWord(props.pokeDetails.name)}\nHeight: ${props.pokeDetails.height}\nWeight: ${props.pokeDetails.weight}\nTypes: ${types.value.join(', ')}`;
+  textToCopy.value = `Name: ${capitalizeWord(props.pokeDetails.name)}, Height: ${props.pokeDetails.height}, Weight: ${props.pokeDetails.weight}, Types: ${types.value.join(', ')}`;
   try {
     await copyToClipboard(textToCopy.value);
     copied.value = true;
